@@ -48,28 +48,26 @@
 
     <header class="hero-section">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="title-main">鳥かご</span>
-                <span class="title-seal">■</span>
-            </h1>
-            <p class="hero-tagline">An Elevated Japanese Dining Experience</p>
+        <div class="hero-pattern">
+            <svg class="pattern-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="0.3" opacity="0.08"/>
+            </svg>
         </div>
-        <div class="hero-scroll">
-            <div class="scroll-icon"></div>
+        <div class="hero-content">
+            <div class="hero-subtitle">鳥かご</div>
+            <h1 class="hero-title">
+                <span class="title-line"></span>
+                <span class="title-text">DRINK MENU</span>
+                <span class="title-line"></span>
+            </h1>
+            <div class="hero-accent">お飲み物</div>
         </div>
     </header>
 
     <main>
         <section id="drinks" class="section-drinks">
             <div class="container">
-                <div class="section-intro">
-                    <h2 class="section-heading">
-                        <span class="heading-en">DRINK COLLECTION</span>
-                        <span class="heading-jp">お飲み物</span>
-                    </h2>
-                </div>
-
                 <div class="drinks-showcase">
                     <div class="drink-item" data-category="beer">
                         <div class="drink-visual">
@@ -154,6 +152,25 @@
                             <h3 class="drink-title">SAKE<span>日本酒</span></h3>
                             <ul class="drink-list">
                                 <li>数種ご用意</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="drink-item" data-category="fruit-liquor">
+                        <div class="drink-visual">
+                            <div class="drink-icon">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1"/>
+                                    <text x="50" y="58" text-anchor="middle" font-size="32" fill="currentColor">果</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="drink-info">
+                            <h3 class="drink-title">FRUIT LIQUOR<span>果実酒</span></h3>
+                            <ul class="drink-list">
+                                <li>じゃばら酒</li>
+                                <li>梅酒</li>
+                                <li>檸檬</li>
                             </ul>
                         </div>
                     </div>
@@ -520,7 +537,7 @@
         // Mobile menu toggle
         const navToggle = document.querySelector('.nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
-        const navItems = document.querySelectorAll('.nav-item');
+        const navMenuItems = document.querySelectorAll('.nav-item');
 
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
@@ -528,7 +545,7 @@
         });
 
         // Close mobile menu when clicking nav item
-        navItems.forEach(item => {
+        navMenuItems.forEach(item => {
             item.addEventListener('click', () => {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('active');
